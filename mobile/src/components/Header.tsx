@@ -29,8 +29,8 @@ export default function Header({ showCancel = true, title }: HeaderProps) {
           <Feather name="x" size={24} color="#ff669d" />
         </BorderlessButton>
       ) : (
-        <View></View>
-      )}
+          <View />
+        )}
     </View>
   );
 }

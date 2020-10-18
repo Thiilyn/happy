@@ -18,7 +18,7 @@ interface Orphanage {
 
 function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([]);
-  
+
   useEffect(() => {
     api.get('orphanages').then(response => {
       setOrphanages(response.data);
@@ -51,29 +51,33 @@ function OrphanagesMap() {
         />
 
         {orphanages.map(orphanage => {
-        return (
-          <Marker
-            key={orphanage.id}
-            icon={mapIcon}
-            position={[orphanage.latitude, orphanage.longitude]}
-          >
-            <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
-              {orphanage.name}
-              <Link to={`/orphanages/${orphanage.id}`}>
-                <FiArrowRight size={20} color="#fff"/>
-              </Link>
-            </Popup>
-          </Marker>
-        )
+          return (
+            <Marker
+              key={orphanage.id}
+              icon={mapIcon}
+              position={[orphanage.latitude, orphanage.longitude]}
+            >
+              <Popup
+                closeButton={false}
+                minWidth={240}
+                maxWidth={240}
+                className="map-popup"
+              >
+                {orphanage.name}
+                <Link to={`/orphanages/${orphanage.id}`}>
+                  <FiArrowRight size={20} color="#fff" />
+                </Link>
+              </Popup>
+            </Marker>
+          );
         })}
       </Map>
 
       <Link to="/orphanages/create" className="create-orphanage">
         <FiPlus size={32} color="#ffffff" />
       </Link>
-
     </div>
-  )
+  );
 }
 
 export default OrphanagesMap;

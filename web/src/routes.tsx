@@ -17,7 +17,7 @@ function Routes() {
         <Route path="/orphanages/:id" component={Orphanage} />
       </Switch>
     </BrowserRouter>
-  )
+  );
 }
 
 export default Routes;

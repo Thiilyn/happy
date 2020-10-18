@@ -21,7 +21,7 @@ export default function SelectMapPosition() {
 
   return (
     <View style={styles.container}>
-      <MapView 
+      <MapView
         initialRegion={{
           latitude: -22.9995074,
           longitude: -44.3141921,
@@ -31,27 +31,30 @@ export default function SelectMapPosition() {
         style={styles.mapStyle}
         onPress={handleSelectMapPosision}
       >
-        { position.latitude !== 0 && (
-          <Marker 
+        {position.latitude !== 0 && (
+          <Marker
             icon={mapMarkerImg}
-            coordinate={{ latitude: position.latitude, longitude: position.longitude }}
+            coordinate={{
+              latitude: position.latitude,
+              longitude: position.longitude,
+            }}
           />
-        ) }
+        )}
       </MapView>
 
-      { position.latitude !== 0 && (
+      {position.latitude !== 0 && (
         <RectButton style={styles.nextButton} onPress={handleNextStep}>
           <Text style={styles.nextButtonText}>Próximo</Text>
         </RectButton>
-        ) }
+      )}
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative'
+    position: 'relative',
   },
 
   mapStyle: {
@@ -76,5 +79,5 @@ const styles = StyleSheet.create({
     fontFamily: 'Nunito_800ExtraBold',
     fontSize: 16,
     color: '#FFF',
-  }
-})
+  },
+});

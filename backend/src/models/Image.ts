@@ -1,4 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 
 import Orphanage from './Orphanage';
 
@@ -6,7 +12,7 @@ import Orphanage from './Orphanage';
 export default class Image {
   @PrimaryGeneratedColumn('increment')
   id: number;
-  
+
   @Column()
   path: string;
 
