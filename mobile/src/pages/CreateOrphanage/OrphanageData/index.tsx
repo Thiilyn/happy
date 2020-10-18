@@ -13,7 +13,7 @@ import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import * as ImagePicker from 'expo-image-picker';
-import api from '../../services/api';
+import api from '../../../services/api';
 
 interface OrphanageDataRouteParams {
   position: {

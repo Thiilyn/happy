@@ -5,11 +5,11 @@ import { useHistory } from 'react-router-dom';
 
 import { FiPlus } from 'react-icons/fi';
 
-import Sidebar from '../components/Sidebar';
-import mapIcon from '../utils/mapIcon';
-import api from '../services/api';
+import Sidebar from '../../components/Sidebar';
+import mapIcon from '../../utils/mapIcon';
+import api from '../../services/api';
 
-import '../styles/pages/create-orphanage.css';
+import './styles.css';
 
 export default function CreateOrphanage() {
   const history = useHistory();
